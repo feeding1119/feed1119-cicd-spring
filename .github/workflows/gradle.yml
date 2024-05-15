@@ -32,7 +32,9 @@ jobs:
       with:
         arguments: clean bootJar
 
-    
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
     # 3. Docker 이미지 빌드
     - name: docker image build
       run: docker build -t feed1119/github-actions-demo .
