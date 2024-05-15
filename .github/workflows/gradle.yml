@@ -23,12 +23,16 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Grant execute permission for gradlew
+      run: chmod +x ./gradlew
+      
     # 2. Spring Boot 애플리케이션 빌드
     - name: Build with Gradle
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: clean bootJar
 
+    
     # 3. Docker 이미지 빌드
     - name: docker image build
       run: docker build -t feed1119/github-actions-demo .
