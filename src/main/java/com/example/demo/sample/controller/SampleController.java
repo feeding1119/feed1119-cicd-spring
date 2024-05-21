@@ -15,6 +15,6 @@ public class SampleController {
     @GetMapping("/sample")
     public String getTestSample(){
         userRepository.save(new User());
-        return "테스트용";
+        return "테스트용1";
     }
 }
